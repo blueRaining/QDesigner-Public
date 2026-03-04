@@ -213,8 +213,7 @@ const RenderCanvas = (props: any) => {
                         if (rawAiConfig) {
                             // 将 aiconfig.json 中的相对图片路径还原为 data URL
                             const baseUrl = aiconfigUrl.substring(0, aiconfigUrl.lastIndexOf('/'));
-                            const aiConfig = await resolveAIConfigImages(rawAiConfig, baseUrl);
-                            editor.saveSelectedMaterialAIConfig(aiConfig);
+ 
                             console.log('[RenderCanvas] AIConfig loaded from CDN');
                         }
                     }
@@ -232,9 +231,7 @@ const RenderCanvas = (props: any) => {
                     const modelFile = new File([modelBlob], 'model.rain', { type: 'application/octet-stream' });
                     updateGlobalLoadingMessage("加载模型中...");
                     await editor.editor.loadModel(modelFile, {});
-                    if (aiConfig) {
-                        editor.saveSelectedMaterialAIConfig(aiConfig);
-                    }
+                 
                     if (envBlob && config?.environment) {
                         const ext = config.environment.split('.').pop() || 'env';
                         const envObjectUrl = URL.createObjectURL(envBlob);

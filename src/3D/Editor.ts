@@ -47,9 +47,6 @@ export class Editor3D extends EventDispatcher {
   // 环境球 URL 跟踪
   private _currentEnvUrl: string | null = null;
   private _currentEnvObjectUrl: string | null = null;
-
-  // AI设计图存储
-  private _aiDesignImages: AIDesignItem[] = [];
  
   constructor(canvas: HTMLCanvasElement, options?: EditorOptions) {
     super();
@@ -276,9 +273,7 @@ export class Editor3D extends EventDispatcher {
     });
   }
 
-  getLastSelectedUVImage() {
-    return this._lastSelectedUVImage;
-  }
+ 
   async getScreenShot(transparent = true) {
 
     return await this.editor.getScreenShot(transparent);
@@ -287,24 +282,15 @@ export class Editor3D extends EventDispatcher {
 
     this.editor.setBackground(url);
   }
-  getLastSelectedUVAlbedoImage() {
-    return this._lastSelectedUVAlbedoImage;
-  }
-  getLastSelectedUVAIConfig() {
-    return this._lastSelectedUVAIConfig;
-  }
+ 
   getMaterialUIById(materialId: string) {
     this.editor.getMaterialUIById(materialId);
   }
   resize() {
     this.editor.resize();
   }
-  getAllAIImages() {
-    return this.editor.getAllAIImages();
-  }
-  getCarveUiConfig() {
-    return this.editor.getCarveUiConfig();
-  }
+ 
+ 
   selectByNodeInfo(treeNode: any) {
     if (treeNode && treeNode.node) {
       treeNode.select();
@@ -328,21 +314,14 @@ export class Editor3D extends EventDispatcher {
     return this.editor.getBaseObjectGeneratorUIConfig();
   }
  
-  getDisplacementUIConfig() {
-    return this.editor.getDisplaceMentUiConfig();
-  }
+ 
   getEditorUiConfig(design = false) {
     return this.editor.getEditorUiConfig(design);
   }
   getAnimationUiConfig() {
     return this.editor.getAnimationUiConfig();
   }
-  getAIUiConfig() {
-    return this.editor.getAIUiConfig();
-  }
-  getImageEditorUiConfig() {
-    return this.editor.getImageEditorUiConfig();
-  }
+ 
   setImage2Image(elementUi: any, imageSrc: string) {
     elementUi.setValue(imageSrc);
   }
@@ -429,103 +408,10 @@ export class Editor3D extends EventDispatcher {
   }
  
  
-  cloneDeferredLightByUUid(uuid: string) {
-    this.editor.cloneDeferredLightByUUid(uuid);
-  }
-  removeDeferredLightByUUid(uuid: string) {
-    if (!uuid) {
-      return;
-    }
-    this.editor.removeDeferredLightByUUid(uuid);
-
-  }
-  getDeferredLightUUid(node: any) {
-    return node?.metadata?.lightUUid
-  }
-  coyPathByUUid(uuid: string, type: string) {
-    this.editor.coyPathByUUid(uuid, type)
-
-  }
-  removePathByUUid(uuid: string, type: string) {
-    this.editor.removePathByUUid(uuid, type)
-
-  }
-  getPathTypeAndUUid(node: any) {
-    let pathType = node?.metadata?.pathType;
-    let pathId = node?.metadata?.pathId;
-    return { pathType, pathId }
-  }
-  setUVTexture(url: string) {
-
-    this.editor.setSelectedUVTexture(url)
-
-  }
-
-  setUVTextureByCanvas(albedo: HTMLCanvasElement|null) {
-
-    this.editor.setSelectedUVTextureByCanvas(albedo)
-
-  }
-  saveLastSelectedMaterialAIConfig(data: any) {
-    this.editor.saveLastSelectedMaterialAIConfig(data);
-    // 同时更新缓存，确保下次打开窗口时能获取到最新配置
-
-  }
-  saveSelectedMaterialAIConfig(data: any) {
-    this.editor.saveSelectedMaterialAIConfig(data);
-    // 同时更新缓存，确保下次打开窗口时能获取到最新配置
-    this._lastSelectedUVAIConfig = data;
-  }
-
-  // ========== AI设计图管理 ==========
-  addAIDesignImage(dataUrl: string, prompt?: string): AIDesignItem {
-    const item: AIDesignItem = {
-      id: `ai-design-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
-      dataUrl,
-      prompt,
-      timestamp: Date.now()
-    };
-    this._aiDesignImages.unshift(item);
-    this.dispatchEvent({ type: 'aiDesignImageAdded', item });
-    return item;
-  }
-
-  removeAIDesignImage(id: string): boolean {
-    const index = this._aiDesignImages.findIndex(item => item.id === id);
-    if (index !== -1) {
-      this._aiDesignImages.splice(index, 1);
-      this.dispatchEvent({ type: 'aiDesignImageRemoved', id });
-      return true;
-    }
-    return false;
-  }
-
-  getAllAIDesignImages(): AIDesignItem[] {
-    return [...this._aiDesignImages];
-  }
-
-  clearAIDesignImages(): void {
-    this._aiDesignImages = [];
-    this.dispatchEvent({ type: 'aiDesignImagesCleared' });
-  }
  
   getDesignData() {
-    const data = this.editor.getDesignData();
-    if (data) {
-      // 如果从材质获取不到 aiConfig，使用缓存的 aiConfig
-      if (!data.aiConfig && this._lastSelectedUVAIConfig) {
-        data.aiConfig = this._lastSelectedUVAIConfig;
-      }
-      return data;
-    }
-    // 如果没有 designData 但有缓存的 aiConfig，构造返回
-    if (this._lastSelectedUVAIConfig) {
-      return {
-        albedoImage: this._lastSelectedUVAlbedoImage || null,
-        aiConfig: this._lastSelectedUVAIConfig,
-      };
-    }
-    return data;
+ 
+    return {};
   }
  
   async getSceneData() {
@@ -609,61 +495,6 @@ export class Editor3D extends EventDispatcher {
     this.editor.setSceneLightDiffuseColor(value, finished, preview)
  
   }
-  updateDesignMaterial(albedo:string,metallic:string,roughness:string,normalMap:string|null){
-    this.editor.updateDesignMaterial?.(albedo, metallic, roughness, normalMap)
-  }
-    updateDesignMaterialByCanvas(albedo:HTMLCanvasElement|null,metallic:HTMLCanvasElement|null,roughness:HTMLCanvasElement|null,normalMap:any){
-    this.editor.updateDesignMaterialByCanvas?.(albedo, metallic, roughness, normalMap)
-  }
-
-  /************************ NormalMapPlugin ************************/
-  setNormalMapHeightMap(canvas: HTMLCanvasElement) {
-    this.editor.setNormalMapHeightMap?.(canvas)
-  }
-  setNormalMapParams(params: {
-    strength?: number;
-    level?: number;
-    blur?: number;
-    type?: "sobel" | "scharr";
-    invertR?: boolean;
-    invertG?: boolean;
-  }) {
-    this.editor.setNormalMapParams?.(params)
-  }
-  async renderNormalMap() {
-    await this.editor.renderNormalMap?.()
-  }
-  getNormalMapTexture() {
-    return this.editor.getNormalMapTexture?.()
-  }
-  async normalMapToCanvas(): Promise<HTMLCanvasElement | null> {
-    return await this.editor.normalMapToCanvas?.() ?? null
-  }
-
-  /************************ NormalMap 多层合成 ************************/
-  initNormalComposite(w: number, h: number) {
-    this.editor.initNormalComposite?.(w, h)
-  }
-  renderNoiseNormalBase(params: {
-    scale?: number;
-    strength?: number;
-  }) {
-    this.editor.renderNoiseNormalBase?.(params)
-  }
-  compositeNormalLayer(
-    maskCanvas: HTMLCanvasElement,
-    cx: number, cy: number,
-    cssW: number, cssH: number,
-    layerW: number, layerH: number,
-    scaleX: number, scaleY: number,
-    rotation: number, opacity: number,
-  ) {
-    this.editor.compositeNormalLayer?.(maskCanvas, cx, cy, cssW, cssH, layerW, layerH, scaleX, scaleY, rotation, opacity)
-  }
-  getNormalCompositeTexture() {
-    return this.editor.getNormalCompositeTexture?.()
-  }
-  async normalCompositeToCanvas(): Promise<HTMLCanvasElement | null> {
-    return await this.editor.normalCompositeToCanvas?.() ?? null
-  }
+ 
+ 
 }

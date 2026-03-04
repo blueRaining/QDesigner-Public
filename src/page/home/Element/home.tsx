@@ -58,7 +58,7 @@ const Home = () => {
             <div className={styles.headerActions}>
               <a
                 className={styles.githubLink}
-                href="https://github.com/blueRaining/QDesigner-PreView/tree/main#"
+                href="https://github.com/blueRaining/QDesigner-Public"
                 target="_blank"
                 rel="noopener noreferrer"
               >

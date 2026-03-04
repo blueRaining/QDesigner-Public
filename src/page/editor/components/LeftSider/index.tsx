@@ -506,16 +506,7 @@ const LeftSider = (props: any) => {
     const handleCopy = useCallback(() => {
          
         if (contextMenu.node && contextMenu.node.treeNode) {
-            if (contextMenu.node?.treeNode?.isDeferredLight) {
-                let lightUUid = Editor3D.instance?.getDeferredLightUUid(contextMenu.node?.treeNode?.node);
-                Editor3D.instance?.cloneDeferredLightByUUid(lightUUid);
-            } else if (contextMenu.node?.treeNode?.isPathMesh) {
-                let { pathType, pathId } = Editor3D.instance?.getPathTypeAndUUid(contextMenu.node?.treeNode?.node);
-                if (!pathType || !pathId) {
-                    return
-                }
-                Editor3D.instance?.coyPathByUUid(pathId, pathType);
-            } else {
+ {
                 if (contextMenu.node?.treeNode?.isHelperObject) {
                     return;
                 }
@@ -531,17 +522,7 @@ const LeftSider = (props: any) => {
         if (contextMenu.node && contextMenu.node.treeNode) {
 
             if (!Editor3D.instance?.hasInstanceNode(contextMenu.node?.treeNode?.node.id)) {
-                if (contextMenu.node?.treeNode?.isDeferredLight) {
-                    let lightUUid = Editor3D.instance?.getDeferredLightUUid(contextMenu.node?.treeNode?.node);
-                    Editor3D.instance?.removeDeferredLightByUUid(lightUUid);
-
-                } else if (contextMenu.node?.treeNode?.isPathMesh) {
-                    let { pathType, pathId } = Editor3D.instance?.getPathTypeAndUUid(contextMenu.node?.treeNode?.node);
-                    if (!pathType || !pathId) {
-                        return
-                    }
-                    Editor3D.instance?.removePathByUUid(pathId, pathType);
-                } else {
+       {
                     if (contextMenu.node?.treeNode?.isHelperObject) {
                         return;
                     }

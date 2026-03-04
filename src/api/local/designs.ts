@@ -71,7 +71,7 @@ function cdnDesign(
  * 添加方式：
  *   cdnDesign('唯一ID', '显示名称', '分类', 'CDN子路径')
  *
- * CDN子路径对应: http://cdn.babylonjsx.cn/models/{子路径}/
+ 
  * 该目录下需包含: model.rain, thumbnail.jpg, environment.env
  */
 const LOCAL_DESIGNS: Design[] = [

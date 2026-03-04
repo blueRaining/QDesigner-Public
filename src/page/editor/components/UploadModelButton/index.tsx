@@ -57,11 +57,7 @@ const UploadModelButton: React.FC = () => {
                 setStatusText('正在加载模型...');
                 await Editor3D.instance.editor.loadModel(modelFile, {});
 
-                // 恢复 AIConfig
-                if (aiConfig) {
-                    setStatusText('正在恢复 AI 配置...');
-                    Editor3D.instance.saveSelectedMaterialAIConfig(aiConfig);
-                }
+       
 
                 // 恢复环境球
                 if (envBlob) {
