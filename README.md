@@ -145,7 +145,7 @@ src/
 - **B 站：** [QDesign设计工具](https://space.bilibili.com/267093860)
 - **微信：** 扫码添加
 
-<img src="./public/icons/wechat-qr.jpg" alt="微信二维码" width="200" />
+<img src="./docs/wechat-qr.jpg" alt="微信二维码" width="200" />
 
 ## 声明
 
