@@ -1,0 +1,98 @@
+.texture-block-list {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: flex-start;
+    max-width: calc(3 * 64px + 2 * 16px); /* 3个图片 + 2个间隔 */
+  }
+  
+  .texture-block-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 64px;
+    cursor: pointer;
+    transition: box-shadow 0.2s, border-color 0.2s;
+    position: relative;
+  }
+  
+  .texture-block-pic {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 4px;
+    background: #222;
+    border: 1px solid #333;
+  }
+  
+  .texture-block-label {
+    margin-top: 4px;
+    font-size: 14px;
+    color: #aaa;
+    text-align: center;
+  }
+  
+  .texture-block-item.selected .texture-block-pic {
+    border-color: #40a9ff;
+    box-shadow: 0 0 0 2px #40a9ff33;
+  }
+  
+  .texture-block-add {
+    justify-content: center;
+  }
+  
+  .texture-block-add-btn {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #18191c;
+    border: 1px dashed #333;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .texture-block-add-btn:hover {
+    border-color: #666;
+    background: #232323;
+  }
+  
+  .texture-block-delete {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    font-size: 16px;
+    color: #959595;
+    background: #000;
+    border-radius: 50%;
+    padding: 2px;
+    cursor: pointer;
+    z-index: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .texture-block-delete:hover {
+    color: #fff;
+  }
+
+.texture-block-arrows {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.texture-block-arrow {
+  color: #959595;
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.2s;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.texture-block-arrow:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}

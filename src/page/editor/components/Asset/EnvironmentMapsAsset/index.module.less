@@ -1,0 +1,610 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 8px;
+
+  :global {
+    .ant-segmented {
+      background: rgba(0, 0, 0, 0.25);
+
+      .ant-segmented-item {
+        color: rgba(255, 255, 255, 0.65);
+
+        &.ant-segmented-item-selected {
+          background: #ff8a00;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+// Upload container - 紧凑型上传框
+.uploadContainer {
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+
+  :global {
+    .ant-upload.ant-upload-select {
+      display: block;
+    }
+  }
+}
+
+// Upload section - 居中预览图
+.envUploadSection {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0 16px;
+}
+
+.envUploadBox {
+  position: relative;
+  width: 180px;
+  height: 120px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: all 0.2s;
+
+  &:hover {
+    border-color: rgba(255, 160, 0, 0.5);
+    background: rgba(255, 140, 0, 0.05);
+
+    .uploadHoverOverlay {
+      opacity: 1;
+    }
+  }
+}
+
+.envPreviewImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.envUploadPlaceholder {
+  width: 180px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 12px;
+}
+
+.uploadIcon {
+  font-size: 32px;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.uploadingIcon {
+  font-size: 20px;
+  color: #ff9500;
+}
+
+.uploadingOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ff9500;
+  font-size: 12px;
+  backdrop-filter: blur(2px);
+}
+
+// Hover overlay for upload and delete buttons
+.uploadHoverOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  transition: opacity 0.2s;
+  backdrop-filter: blur(3px);
+}
+
+// Hover button styles
+.hoverBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  :global(.anticon) {
+    font-size: 18px;
+  }
+
+  &:hover {
+    background: rgba(255, 160, 0, 0.85);
+    border-color: rgba(255, 160, 0, 0.9);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+}
+
+.hoverDeleteBtn {
+  &:hover {
+    background: rgba(255, 77, 79, 0.85);
+    border-color: rgba(255, 77, 79, 0.9);
+  }
+}
+
+.clearEnvBtn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.2s;
+  z-index: 10;
+  backdrop-filter: blur(4px);
+
+  &:hover {
+    background: rgba(255, 77, 79, 0.8);
+    color: #fff;
+  }
+}
+
+.content {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 4px;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+  }
+}
+
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.empty {
+  margin-top: 40px;
+
+  :global {
+    .ant-empty-description {
+      color: rgba(255, 255, 255, 0.3);
+    }
+  }
+}
+
+// Environment map grid - 2 columns
+.envMapGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  padding: 4px 0;
+}
+
+// Batch toggle button
+.batchToggle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+
+  &:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+  }
+}
+
+// Batch action bar
+.batchBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.batchActions {
+  display: flex;
+  gap: 6px;
+}
+
+// Selected card highlight
+.envMapSelected {
+  border-color: rgba(22, 119, 255, 0.6) !important;
+  background: rgba(22, 119, 255, 0.08) !important;
+}
+
+// Checkbox on card
+.envMapCheckbox {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  z-index: 2;
+}
+
+.envMapCard {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: grab;
+  transition: all 0.2s;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  min-height: 100px;
+
+  &:hover {
+    border-color: rgba(255, 160, 0, 0.5);
+    background: rgba(255, 140, 0, 0.05);
+    transform: translateY(-2px);
+
+    .actionBtns {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  &:active {
+    cursor: grabbing;
+    transform: scale(0.98);
+  }
+}
+
+.envMapWrapper {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  overflow: hidden;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.envMapImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.noThumbnail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #2d2d44 0%, #1a1a2e 100%);
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+// Loading overlay for applying environment map
+.envMapLoading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 5;
+  backdrop-filter: blur(2px);
+}
+
+.itemName {
+  padding: 6px;
+  text-align: center;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.65);
+  background: rgba(0, 0, 0, 0.3);
+  line-height: 1.2;
+
+  span {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+  }
+}
+
+// Action buttons container
+.actionBtns {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.2s;
+  z-index: 10;
+}
+
+// Edit button
+.editBtn {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 12px;
+  backdrop-filter: blur(4px);
+
+  &:hover {
+    background: #1890ff;
+    color: #fff;
+  }
+}
+
+// Delete button
+.deleteBtn {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 12px;
+  backdrop-filter: blur(4px);
+
+  &:hover {
+    background: #ff4d4f;
+    color: #fff;
+  }
+}
+
+.loadMore {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  margin-top: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.2s;
+
+  &:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+// Tab Segmented
+.tabSegmented {
+  margin-bottom: 16px;
+  flex-shrink: 0;
+}
+
+// Panels
+.assetsPanel,
+.uploadPanel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+// Assets sub-tabs
+.assetsTabs {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  :global {
+    .ant-tabs-nav {
+      margin-bottom: 8px;
+
+      &::before {
+        border-color: rgba(255, 255, 255, 0.08);
+      }
+    }
+
+    .ant-tabs-tab {
+      color: rgba(255, 255, 255, 0.45);
+      font-size: 12px;
+      padding: 6px 0;
+
+      &:hover {
+        color: rgba(255, 255, 255, 0.85);
+      }
+
+      &.ant-tabs-tab-active {
+        .ant-tabs-tab-btn {
+          color: #ff9500;
+        }
+      }
+    }
+
+    .ant-tabs-ink-bar {
+      background: #ff9500;
+    }
+
+    .ant-tabs-content-holder {
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .ant-tabs-content {
+      height: 100%;
+    }
+
+    .ant-tabs-tabpane {
+      height: 100%;
+    }
+  }
+}
+
+.tabContent {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+  }
+}
+
+// Slider row styles
+.sliderRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 4px;
+}
+
+.sliderLabel {
+  flex-shrink: 0;
+  width: 70px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.slider {
+  flex: 1;
+  margin: 0;
+
+  :global {
+    .ant-slider-rail {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .ant-slider-track {
+      background: #ff9500;
+    }
+
+    .ant-slider-handle {
+      border-color: #ff9500;
+
+      &::after {
+        box-shadow: 0 0 0 2px #ff9500;
+      }
+
+      &:hover,
+      &:focus {
+        border-color: #ffb340;
+
+        &::after {
+          box-shadow: 0 0 0 2px #ffb340;
+        }
+      }
+    }
+  }
+}
+
+.sliderInput {
+  width: 60px;
+  flex-shrink: 0;
+
+  :global {
+    .ant-input-number-input {
+      text-align: right;
+      padding: 0 6px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.85);
+    }
+  }
+
+  &.ant-input-number {
+    background: rgba(0, 0, 0, 0.25);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+}
+

@@ -1,0 +1,37 @@
+ 
+.loadingWrapper{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background-color: black;
+}
+.loading {
+    width: 45px;
+    height: 45px;
+    display: inline-block;
+    padding: 0px;
+    border-radius: 100%;
+    border: 5px solid;
+    border-top-color: rgb(0, 174, 255,1);
+    border-bottom-color: rgba(0, 174, 255, 0.3);
+    border-left-color: rgba(0, 174, 255, 1);
+    border-right-color: rgba(0, 174, 255, 0.3);
+    animation: loading-animation 1s ease-in-out infinite;
+    // background: transparent;
+  }
+  
+  @keyframes loading-animation {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  }

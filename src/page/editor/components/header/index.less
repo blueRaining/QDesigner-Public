@@ -1,0 +1,67 @@
+@import url('/@/design/theme/dark.less');
+.editorLogo{
+    width: 36px;
+    height: 36px;
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 12px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+.ant-layout-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 48px;
+    min-height: 48px;
+    padding: 0 !important;
+    background-color: rgb(18, 18, 18) !important;
+    border-bottom: 1px solid @border-color-base;
+    width: 100%;
+    .headerMenu{
+        width: 100%;
+        display: flex;
+        justify-content: center;  /* 将 Menu 居中 */
+        align-items: center;
+    }
+    .header-ri {
+        padding-right: 16px;
+        color: @text-color;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .ai-design-btn {
+        background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%) !important;
+        border: none !important;
+        font-weight: 500;
+        padding: 4px 16px;
+        height: 34px;
+        border-radius: 17px;
+        box-shadow: 0 2px 8px rgba(255, 152, 0, 0.35);
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(255, 152, 0, 0.5);
+            background: linear-gradient(135deg, #ffb74d 0%, #ff9800 100%) !important;
+        }
+
+        &:active {
+            transform: translateY(0);
+        }
+
+        .anticon {
+            font-size: 16px;
+        }
+    }
+
+    .iconfont {
+        color: @text-color;
+    }
+}

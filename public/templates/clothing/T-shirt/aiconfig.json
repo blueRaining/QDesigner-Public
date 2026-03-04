@@ -1,0 +1,98 @@
+{
+  "windowSize": {
+    "w": 1024,
+    "h": 858
+  },
+  "canvasBoxSize": {
+    "w": 1024,
+    "h": 1024
+  },
+  "aspectHint": {
+    "w": 1024,
+    "h": 1024
+  },
+  "zoom": 0.7,
+  "pan": {
+    "tx": 147.2,
+    "ty": 121.867
+  },
+  "layers": [
+    {
+      "id": "__albedo_default__",
+      "w": 1024,
+      "h": 1024,
+      "locked": false,
+      "opacity": 1,
+      "flipX": false,
+      "flipY": false,
+      "autoCover": true,
+      "transform": {
+        "cx": 512,
+        "cy": 512,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotation": 0
+      },
+      "imgDataUrl": "__REF_UV_IMAGE__"
+    },
+    {
+      "id": "90b43cc9-d8dd-4be9-a8cd-6563ec42a8d9",
+      "w": 1020,
+      "h": 467,
+      "locked": false,
+      "opacity": 1,
+      "flipX": false,
+      "flipY": false,
+      "transform": {
+        "cx": 519,
+        "cy": 539,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotation": 0
+      },
+      "isAiGenerated": true,
+      "generatedPrompt": "以火影忍者为主题，佐助和鸣人大战，",
+      "aiMaskParams": {
+        "mode": "png",
+        "regionIds": [
+          "region_0",
+          "region_1",
+          "region_2",
+          "region_3",
+          "region_4"
+        ],
+        "boundsPixel": {
+          "x": 2,
+          "y": 319,
+          "w": 1020,
+          "h": 467
+        },
+        "aiWidth": 1024,
+        "aiHeight": 469,
+        "fullWidth": 1024,
+        "fullHeight": 1024
+      },
+      "sourceRegionId": "region_0",
+      "imgDataUrl": "images/layer_1.png"
+    }
+  ],
+  "uvImageDataUrl": null,
+  "designType": "other",
+  "maskCanvasWidth": 1024,
+  "maskCanvasHeight": 1024,
+  "aiPrompt": "",
+  "colorOnlyMode": false,
+  "useCustomColor": false,
+  "customColor": "#1890ff",
+  "knifeMode": false,
+  "maskUploadKind": "png",
+  "svgOriginalContent": null,
+  "maskSourceImageDataUrl": "images/mask_source.png",
+  "globalMetalness": 0,
+  "globalRoughness": 0.5,
+  "globalNoiseScale": 1000,
+  "globalNoiseStrength": 0,
+  "globalFillColor": "#ffffff",
+  "globalFillEnabled": false,
+  "savedAt": 1772419132222
+}

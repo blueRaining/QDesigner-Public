@@ -1,0 +1,42 @@
+@import url('/@/design/public.less');
+@import url('/@/design/var.less');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+#root {
+    height: 100%;
+    // min-width: 1200px;
+    overflow: hidden;
+    .ant-spin-nested-loading {
+        height: 100%;
+    }
+
+    .ant-spin-container {
+        height: 100%;
+    }
+
+    .root-loading {
+        max-height: 100%;
+    }
+}
+
+.ant-message-custom-content {
+    display: flex;
+    align-items: center;
+
+    .anticon {
+        top: 0 !important;
+    }
+}
+

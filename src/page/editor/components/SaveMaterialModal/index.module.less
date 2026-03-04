@@ -1,0 +1,159 @@
+.saveModal {
+  :global {
+    .ant-modal-content {
+      background-color: #1f1f1f !important;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+    }
+
+    .ant-modal-header {
+      background: transparent !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 16px 20px;
+    }
+
+    .ant-modal-title {
+      color: rgba(255, 255, 255, 0.9) !important;
+      font-size: 14px;
+    }
+
+    .ant-modal-body {
+      padding: 20px;
+    }
+
+    .ant-modal-footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 12px 20px;
+    }
+
+    .ant-modal-close {
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    .ant-modal-close:hover {
+      color: rgba(255, 255, 255, 0.85);
+      background: transparent;
+    }
+
+    .ant-input {
+      background: rgba(0, 0, 0, 0.2) !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+      color: rgba(255, 255, 255, 0.85) !important;
+      border-radius: 6px;
+    }
+
+    .ant-input::placeholder {
+      color: rgba(255, 255, 255, 0.3) !important;
+    }
+
+    .ant-input:hover,
+    .ant-input:focus {
+      border-color: rgba(255, 160, 0, 0.5) !important;
+      background: rgba(0, 0, 0, 0.3) !important;
+    }
+
+    .ant-select .ant-select-selector {
+      background: rgba(0, 0, 0, 0.65) !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+      border-radius: 6px;
+    }
+
+    .ant-select .ant-select-selection-placeholder {
+      color: rgba(255, 255, 255, 0.3) !important;
+    }
+
+    .ant-select .ant-select-selection-item {
+      color: rgba(255, 255, 255, 0.85) !important;
+    }
+
+    .ant-select:hover .ant-select-selector {
+      border-color: rgba(255, 160, 0, 0.5) !important;
+    }
+
+    .ant-select.ant-select-focused .ant-select-selector {
+      border-color: rgba(255, 160, 0, 0.5) !important;
+      background: rgba(0, 0, 0, 0.75) !important;
+    }
+
+    .ant-btn-primary {
+      background: #ff9500;
+      border-color: #ff9500;
+      color: #fff;
+    }
+
+    .ant-btn-primary:hover {
+      background: #ffaa33;
+      border-color: #ffaa33;
+    }
+
+    .ant-btn-primary:disabled {
+      background: rgba(255, 149, 0, 0.4);
+      border-color: rgba(255, 149, 0, 0.4);
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .ant-btn-default {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    .ant-btn-default:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .ant-progress .ant-progress-bg {
+      background: #ff9500;
+    }
+  }
+}
+
+/* 下拉框弹出层样式 */
+.selectDropdown {
+  background: #1f1f1f !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+}
+
+.selectDropdown :global(.ant-select-item) {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.selectDropdown :global(.ant-select-item:hover) {
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.selectDropdown :global(.ant-select-item-option-selected) {
+  background: rgba(255, 160, 0, 0.15) !important;
+  color: #ff9500 !important;
+}
+
+.selectDropdown :global(.ant-select-item-option-active) {
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.formItem {
+  margin-bottom: 16px;
+}
+
+.formItem:last-child {
+  margin-bottom: 0;
+}
+
+.label {
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.defaultBadge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 6px;
+  font-size: 10px;
+  background: rgba(255, 160, 0, 0.2);
+  color: rgba(255, 160, 0, 0.9);
+  border-radius: 3px;
+}

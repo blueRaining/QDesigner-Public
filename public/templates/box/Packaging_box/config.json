@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "id": "tpl_50ad8fe6c6ba",
+  "name": "Packaging_box",
+  "description": null,
+  "category": "box",
+  "category_name": "包装盒设计",
+  "model": "model.rain",
+  "thumbnail": "thumbnail.jpg",
+  "aiconfig": "aiconfig.json",
+  "environment": "environment.env"
+}

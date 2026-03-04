@@ -1,0 +1,580 @@
+// Dark Modal for delete confirmation
+.darkModal {
+    :global {
+        .ant-modal-content {
+            background: #1f1f1f;
+            border-radius: 8px;
+        }
+
+        .ant-modal-confirm-title {
+            color: rgba(255, 255, 255, 0.85) !important;
+        }
+
+        .ant-modal-confirm-content {
+            color: rgba(255, 255, 255, 0.65) !important;
+        }
+
+        .ant-btn-default {
+            background: transparent;
+            border-color: rgba(255, 255, 255, 0.25);
+            color: rgba(255, 255, 255, 0.85);
+
+            &:hover {
+                border-color: rgba(255, 255, 255, 0.4);
+                color: #fff;
+            }
+        }
+
+        .ant-btn-dangerous {
+            background: transparent;
+            border-color: #ff4d4f;
+            color: #ff4d4f;
+
+            &:hover {
+                background: rgba(255, 77, 79, 0.1);
+                border-color: #ff7875;
+                color: #ff7875;
+            }
+        }
+    }
+}
+
+.backgroundWrapper {
+    padding: 16px;
+    color: rgba(255, 255, 255, 0.85);
+
+    :global {
+        .ant-segmented {
+            background: rgba(0, 0, 0, 0.25);
+
+            .ant-segmented-item {
+                color: rgba(255, 255, 255, 0.65);
+
+                &.ant-segmented-item-selected {
+                    background: #ff8a00;
+                    color: #fff;
+                }
+            }
+        }
+
+        .ant-select-selector {
+            background: rgba(0, 0, 0, 0.25) !important;
+            border-color: rgba(255, 255, 255, 0.15) !important;
+            color: rgba(255, 255, 255, 0.85) !important;
+        }
+
+        .ant-select-arrow {
+            color: rgba(255, 255, 255, 0.45);
+        }
+
+        .ant-input-number {
+            background: rgba(0, 0, 0, 0.25);
+            border-color: rgba(255, 255, 255, 0.15);
+            color: rgba(255, 255, 255, 0.85);
+
+            .ant-input-number-input {
+                color: rgba(255, 255, 255, 0.85);
+            }
+
+            .ant-input-number-handler-wrap {
+                background: rgba(0, 0, 0, 0.25);
+            }
+        }
+    }
+}
+
+.tabSegmented {
+    margin-bottom: 20px;
+}
+
+.transparentRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    margin-bottom: 16px;
+
+    span {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.85);
+    }
+
+    :global {
+        .ant-switch {
+            background: rgba(255, 255, 255, 0.25);
+
+            &.ant-switch-checked {
+                background: #ff8a00;
+            }
+        }
+    }
+}
+
+.colorPanel,
+.assetsPanel,
+.uploadPanel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sectionTitle {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 4px;
+}
+
+// 渐变预设网格
+.gradientGrid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 8px;
+}
+
+.gradientItem {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    &.selected {
+        border-color: #ff8a00;
+        box-shadow: 0 0 0 2px rgba(255, 138, 0, 0.3);
+    }
+}
+
+// 颜色选择行
+.colorRow {
+    display: flex;
+    gap: 12px;
+}
+
+.colorInput {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    padding: 8px 12px;
+
+    span {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.65);
+    }
+}
+
+// 控制行
+.controlRow {
+    display: flex;
+    gap: 12px;
+}
+
+.typeSelect {
+    flex: 1;
+}
+
+// 角度控制行
+.angleRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.angleInput {
+    width: 60px;
+    flex-shrink: 0;
+
+    :global {
+        .ant-input-number-input {
+            text-align: center;
+        }
+    }
+}
+
+.angleShortcuts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+    margin-left: 15px;
+}
+
+.angleBtn {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 15px;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.4);
+        color: rgba(255, 255, 255, 0.85);
+    }
+
+    &.active {
+        background: #ff8a00;
+        color: #fff;
+    }
+}
+
+.angleCenter {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+// 图片上传
+.imageUpload {
+    width: 100%;
+}
+
+.fileInput {
+    display: none;
+}
+
+.uploadLabel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 120px;
+    background: rgba(0, 0, 0, 0.25);
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 14px;
+    transition: all 0.2s ease;
+    overflow: hidden;
+
+    &:hover {
+        border-color: rgba(255, 255, 255, 0.4);
+        color: rgba(255, 255, 255, 0.65);
+    }
+}
+
+.previewImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+// ==================== Background Images List ====================
+
+.uploadSection {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+
+    :global {
+        .ant-upload {
+            display: block;
+            width: 100%;
+        }
+    }
+}
+
+.currentBgPreview {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 6px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.uploadButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    height: 32px;
+    background: transparent;
+    border: 1px solid rgba(255, 138, 0, 0.5);
+    border-radius: 6px;
+    color: rgba(255, 138, 0, 0.9);
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: rgba(255, 138, 0, 0.1);
+        border-color: rgba(255, 138, 0, 0.7);
+        color: #ff8a00;
+    }
+
+    &.uploading {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+}
+
+.uploadHint {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.35);
+    text-align: center;
+}
+
+.clearButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 32px;
+    background: transparent;
+    border: 1px solid rgba(255, 100, 100, 0.4);
+    border-radius: 6px;
+    color: rgba(255, 100, 100, 0.8);
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: rgba(255, 100, 100, 0.1);
+        border-color: rgba(255, 100, 100, 0.6);
+        color: rgba(255, 100, 100, 1);
+    }
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin-bottom: 12px;
+}
+
+.imageListScroll {
+    max-height: calc(100vh - 450px);
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 2px;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+    }
+}
+
+.bgImageGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.bgImageCard {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    cursor: grab;
+    transition: all 0.2s ease;
+
+    &:hover {
+        border-color: rgba(255, 160, 0, 0.5);
+        transform: translateY(-1px);
+
+        .actionBtns {
+            opacity: 1;
+        }
+    }
+
+    &:active {
+        cursor: grabbing;
+    }
+
+    &.selected {
+        border-color: #ff9500;
+        box-shadow: 0 0 0 2px rgba(255, 149, 0, 0.2);
+    }
+}
+
+.bgImageWrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/10;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bgImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.noThumbnail {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.15);
+}
+
+.actionBtns {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    display: flex;
+    gap: 4px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.editBtn,
+.deleteBtn {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: rgba(255, 140, 0, 0.8);
+        color: #fff;
+    }
+}
+
+.deleteBtn:hover {
+    background: rgba(255, 77, 79, 0.8);
+}
+
+.bgImageName {
+    padding: 6px 8px;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.65);
+    background: rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+.loadingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.empty {
+    padding: 30px 0;
+
+    :global {
+        .ant-empty-description {
+            color: rgba(255, 255, 255, 0.3);
+        }
+    }
+}
+
+.loadMore {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 8px;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.02);
+    transition: all 0.2s;
+
+    &:hover {
+        color: #fff;
+        background: rgba(255, 255, 255, 0.05);
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+}
+
+// Tabs for background images
+.bgTabs {
+    :global {
+        .ant-tabs-nav {
+            margin-bottom: 12px;
+
+            &::before {
+                border-color: rgba(255, 255, 255, 0.08);
+            }
+        }
+
+        .ant-tabs-tab {
+            color: rgba(255, 255, 255, 0.45);
+            font-size: 12px;
+            padding: 6px 0;
+
+            &:hover {
+                color: rgba(255, 255, 255, 0.85);
+            }
+
+            &.ant-tabs-tab-active {
+                .ant-tabs-tab-btn {
+                    color: #ff9500;
+                }
+            }
+        }
+
+        .ant-tabs-ink-bar {
+            background: #ff9500;
+        }
+    }
+}
+

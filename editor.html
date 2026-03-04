@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+       <link rel="icon" type="image/svg+xml" href="./icons/q.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QDesign</title>
+    <style>
+      .root-loading {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 99999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #000000;
+        overflow: hidden;
+      }
+
+      .root-loading::before {
+        content: '';
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle at 20% 80%, rgba(255, 149, 0, 0.08) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(255, 107, 0, 0.08) 0%, transparent 50%);
+        animation: bgMove 8s ease-in-out infinite;
+      }
+
+      @keyframes bgMove {
+        0%, 100% {
+          transform: translate(-10%, -10%) rotate(0deg);
+        }
+        50% {
+          transform: translate(10%, 10%) rotate(180deg);
+        }
+      }
+
+      .root-loading-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        z-index: 1;
+      }
+
+      .cube-container {
+        width: 54px;
+        height: 54px;
+        perspective: 270px;
+      }
+
+      .cube {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        animation: cubeRotate 3s ease-in-out infinite;
+      }
+
+      @keyframes cubeRotate {
+        0% {
+          transform: rotateX(-20deg) rotateY(0deg);
+        }
+        50% {
+          transform: rotateX(20deg) rotateY(180deg);
+        }
+        100% {
+          transform: rotateX(-20deg) rotateY(360deg);
+        }
+      }
+
+      .face {
+        position: absolute;
+        width: 54px;
+        height: 54px;
+        border: 2px solid rgba(255, 149, 0, 0.6);
+        background: linear-gradient(135deg, rgba(255, 149, 0, 0.15) 0%, rgba(255, 107, 0, 0.15) 100%);
+        backdrop-filter: blur(5px);
+        box-shadow: 0 0 20px rgba(255, 149, 0, 0.3), inset 0 0 20px rgba(255, 149, 0, 0.1);
+      }
+
+      .front { transform: translateZ(27px); }
+      .back { transform: rotateY(180deg) translateZ(27px); }
+      .left { transform: rotateY(-90deg) translateZ(27px); }
+      .right { transform: rotateY(90deg) translateZ(27px); }
+      .top { transform: rotateX(90deg) translateZ(27px); }
+      .bottom { transform: rotateX(-90deg) translateZ(27px); }
+
+      .loading-message {
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        color: rgba(255, 255, 255, 0.9);
+        text-shadow: 0 0 10px rgba(255, 149, 0, 0.8),
+                     0 0 20px rgba(255, 149, 0, 0.5),
+                     0 0 30px rgba(255, 149, 0, 0.3);
+        animation: messagePulse 2s ease-in-out infinite;
+      }
+
+      @keyframes messagePulse {
+        0%, 100% {
+          opacity: 0.7;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 全局 Loading - 独立于 #root，由 RenderCanvas 控制移除 -->
+    <div id="global-loading" class="root-loading">
+      <div class="root-loading-content">
+        <div class="cube-container">
+          <div class="cube">
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face left"></div>
+            <div class="face right"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+          </div>
+        </div>
+        <div id="loading-message" class="loading-message">初始化中...</div>
+      </div>
+    </div>
+    <div id="root"></div>
+    <script  src="./libs/jszip.js"></script>
+    <script type="module" src="/src/main.tsx"></script>
+
+  </body>
+</html>

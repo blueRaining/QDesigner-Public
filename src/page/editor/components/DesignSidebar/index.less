@@ -1,0 +1,164 @@
+@import url('/@/design/theme/dark.less');
+
+.design-sidebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; // 顶部对齐
+    padding: 16px 0 16px 16px;
+    background: transparent;
+    z-index: 100;
+    pointer-events: none; // 让点击穿透到 canvas
+
+    > * {
+        pointer-events: auto; // 子元素恢复点击
+    }
+}
+
+// 左侧 Tab 栏 - 浮动卡片式设计
+.design-sidebar-tabs {
+    width: 68px;
+    height: fit-content;
+    background: rgba(24, 24, 28, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 6px;
+    gap: 2px;
+    z-index: 101;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.design-sidebar-tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 6px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: rgba(255, 255, 255, 0.6);
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.06);
+        color: rgba(255, 255, 255, 0.85);
+    }
+
+    &.active {
+        background: rgba(255, 138, 0, 0.18);
+        color: #ff8a00;
+
+        .tab-icon {
+            color: #ff8a00;
+        }
+    }
+
+    .tab-icon {
+        font-size: 20px;
+        margin-bottom: 4px;
+    }
+
+    .tab-label {
+        font-size: 10px;
+        text-align: center;
+        white-space: nowrap;
+    }
+}
+
+// 展开的内容面板 - 浮在 canvas 上面，卡片式设计
+.design-sidebar-panel {
+    position: relative;
+    margin-left: 12px;
+    width: 320px;
+    height: 65vh; // 页面高度的 65%
+    background: rgba(24, 24, 28, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    animation: slideIn 0.2s ease;
+    z-index: 100;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 16px 14px;
+    background: transparent;
+    flex-shrink: 0;
+}
+
+.panel-title {
+    font-size: 15px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.panel-close {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 6px;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+        color: rgba(255, 255, 255, 0.9);
+        background: rgba(255, 255, 255, 0.08);
+    }
+}
+
+.panel-content {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0 5px 16px;
+    min-height: 0; // 确保 flex 子项可以正确收缩
+
+    // 直接显示资源列表内容
+    > div {
+        height: 100%;
+    }
+}
+
+// 滚动条样式
+.panel-content::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.panel-content::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 4px 0;
+}
+
+.panel-content::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 4px;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+}

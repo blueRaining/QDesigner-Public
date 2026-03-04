@@ -1,0 +1,84 @@
+{
+  "windowSize": {
+    "w": 1024,
+    "h": 858
+  },
+  "canvasBoxSize": {
+    "w": 1024,
+    "h": 496
+  },
+  "aspectHint": {
+    "w": 1024,
+    "h": 496
+  },
+  "zoom": 0.7,
+  "pan": {
+    "tx": 204.90000000000003,
+    "ty": 99.15000000000002
+  },
+  "layers": [
+    {
+      "id": "__albedo_default__",
+      "w": 1024,
+      "h": 496,
+      "locked": false,
+      "opacity": 1,
+      "flipX": false,
+      "flipY": false,
+      "autoCover": true,
+      "transform": {
+        "cx": 512,
+        "cy": 248,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotation": 0
+      },
+      "imgDataUrl": "__REF_UV_IMAGE__"
+    },
+    {
+      "id": "3aca182b-7ea0-48b8-9336-4040b20b053b",
+      "layerType": "craft",
+      "w": 7442,
+      "h": 3604,
+      "locked": false,
+      "opacity": 1,
+      "flipX": false,
+      "flipY": false,
+      "transform": {
+        "cx": 512,
+        "cy": 248,
+        "scaleX": 0.13762486126526083,
+        "scaleY": 0.13762486126526083,
+        "rotation": 0
+      },
+      "layerName": "工艺图层",
+      "craftData": {
+        "color": "#f1b200",
+        "metalness": 1,
+        "roughness": 0.2,
+        "normalStrength": 0.3,
+        "invertHeight": true
+      },
+      "imgDataUrl": "images/layer_1.png"
+    }
+  ],
+  "uvImageDataUrl": null,
+  "designType": "other",
+  "maskCanvasWidth": 1024,
+  "maskCanvasHeight": 496,
+  "aiPrompt": "",
+  "colorOnlyMode": false,
+  "useCustomColor": false,
+  "customColor": "#1890ff",
+  "knifeMode": false,
+  "maskUploadKind": "png",
+  "svgOriginalContent": null,
+  "maskSourceImageDataUrl": "images/mask_source.png",
+  "globalMetalness": 0,
+  "globalRoughness": 0.5,
+  "globalNoiseScale": 1000,
+  "globalNoiseStrength": 0.23,
+  "globalFillColor": "#005363",
+  "globalFillEnabled": true,
+  "savedAt": 1772289728917
+}

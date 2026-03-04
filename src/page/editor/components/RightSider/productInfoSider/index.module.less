@@ -1,0 +1,65 @@
+.container {
+  padding: 16px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+
+.form {
+  :global(.ant-form-item-label > label) {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  :global(.ant-input),
+  :global(.ant-select-selector) {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    color: #fff !important;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  :global(.ant-input:hover),
+  :global(.ant-select-selector:hover) {
+    border-color: rgba(255, 255, 255, 0.4) !important;
+  }
+
+  :global(.ant-input:focus),
+  :global(.ant-select-focused .ant-select-selector) {
+    border-color: #1890ff !important;
+    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2) !important;
+  }
+
+  :global(.ant-select-arrow) {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  :global(.ant-input-textarea-show-count::after) {
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+.descriptionItem {
+  :global(textarea.ant-input) {
+    color: #000 !important;
+  }
+
+  :global(textarea.ant-input::placeholder) {
+    color: rgba(0, 0, 0, 0.45) !important;
+  }
+}

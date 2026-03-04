@@ -1,0 +1,133 @@
+// 底部悬浮工具栏容器
+.toolsBarContainer {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 200;
+    pointer-events: none;
+}
+
+// 工具栏包装器
+.toolsBarWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 16px;
+    background: rgba(18, 18, 20, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    pointer-events: auto;
+}
+
+// 工具图标
+.toolIcon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    user-select: none;
+
+    &:hover {
+        background: rgba(255, 138, 0, 0.15);
+        color: #ff8a00;
+    }
+
+    &:active {
+        background: rgba(255, 138, 0, 0.25);
+        transform: scale(0.95);
+    }
+}
+
+// 分隔线
+.divider {
+    width: 1px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.15);
+    margin: 0 8px;
+}
+
+// 带下拉箭头的工具图标
+.toolIconWithBadge {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    user-select: none;
+
+    &:hover {
+        background: rgba(255, 138, 0, 0.15);
+        color: #ff8a00;
+    }
+
+    &:active {
+        background: rgba(255, 138, 0, 0.25);
+        transform: scale(0.95);
+    }
+}
+
+// 下拉箭头
+.dropdownArrow {
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    font-size: 8px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+// 地面下拉菜单样式
+.groundDropdown {
+    :global {
+        .ant-dropdown-menu {
+            background: rgba(24, 24, 28, 0.96);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+            padding: 4px;
+        }
+
+        .ant-dropdown-menu-item {
+            color: rgba(255, 255, 255, 0.85);
+            border-radius: 6px;
+            padding: 8px 12px;
+
+            &:hover {
+                background: rgba(255, 138, 0, 0.15);
+                color: #ff8a00;
+            }
+        }
+    }
+}
+
+// 旧样式保留兼容
+.toosWrapper{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.icons{
+    width:20px ;
+    height: 20px;
+    margin: 15px;
+    margin-right: 5px;
+    display: inline-block;
+    font-size: 20px;
+    line-height: 20px;
+    cursor: pointer;
+    user-select: none;
+}

@@ -1,0 +1,96 @@
+.assetWrapper {
+    background-color: var(--editor-panel-bg, rgb(18, 18, 18));
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+    // padding: 40px;
+    overflow: hidden;
+
+    #host-element {
+        height: 100%;
+
+        #nmeNodeList {
+            overflow-y: scroll;
+        }
+ 
+        .list-container {
+            height: 100% !important;
+            padding-bottom: 200px;
+        }
+    }
+
+    .ant-tabs-content-holder {
+        height: 100%;
+
+        .ant-tabs-content {
+            height: 100%;
+
+            .ant-tabs-tabpane {
+                height: 100%;
+            }
+        }
+    }
+
+    // .ant-tabs-tab {
+    //     margin-top: 15px !important;
+    // }
+    .sceneAssetTaps {
+        background-color: var(--editor-panel-bg, rgb(18, 18, 18));
+        margin: 0px;
+        padding: 0px;
+        height: 100%;
+        // height: 400px;
+        width: 100%;
+
+        .ant-tabs-nav-wrap {
+            overflow-y: scroll !important;
+            // height: 400px !important;
+            min-height: 450px;
+            height: 100%;
+
+        }
+
+        .ant-tabs-tab {
+            padding-top: 0px !important;
+        }
+
+        .ant-tabs-content-holder {
+            overflow: hidden;
+
+            .ant-tabs-nav {
+                height: 34px !important;
+                overflow-y: scroll;
+                position: absolute;
+                background-color: var(--editor-panel-bg, #121212);
+                z-index: 1000;
+                width: 100%;
+            }
+
+            .ant-tabs-tabpane {
+                overflow-y: scroll !important;
+                // height: 300px !important;
+            }
+
+            .ant-tabs-nav-list:first-child {
+                padding-top: 0px !important;
+
+            }
+
+            .ant-tabs {
+                overflow-y: hidden !important;
+            }
+
+        }
+    }
+
+    .assetTaps {
+        background-color: var(--editor-panel-bg, rgb(18, 18, 18));
+        margin: 0px;
+        padding: 0px;
+        height: 100%;
+        // height: 400px;
+        width: 100%;
+
+    }
+}

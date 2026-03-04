@@ -1,0 +1,97 @@
+{
+  "windowSize": {
+    "w": 1024,
+    "h": 858
+  },
+  "canvasBoxSize": {
+    "w": 1024,
+    "h": 1024
+  },
+  "aspectHint": {
+    "w": 1024,
+    "h": 1024
+  },
+  "zoom": 0.7,
+  "pan": {
+    "tx": 127.20000000000002,
+    "ty": 127.20000000000002
+  },
+  "layers": [
+    {
+      "id": "__albedo_default__",
+      "w": 1024,
+      "h": 1024,
+      "locked": false,
+      "opacity": 1,
+      "flipX": false,
+      "flipY": false,
+      "autoCover": true,
+      "transform": {
+        "cx": 512,
+        "cy": 512,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotation": 0
+      },
+      "imgDataUrl": "__REF_UV_IMAGE__"
+    },
+    {
+      "id": "a0e11786-3a37-4574-851f-4fc37394111e",
+      "w": 1020,
+      "h": 467,
+      "locked": false,
+      "opacity": 1,
+      "flipX": false,
+      "flipY": false,
+      "transform": {
+        "cx": 512,
+        "cy": 552.5,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotation": 0
+      },
+      "isAiGenerated": true,
+      "generatedPrompt": "这是一个T恤的展开图，帮我在遮罩区域内，以火影忍者，鸣人和佐助大战为主题，设计图案，图案中同时需要出现九尾和须佐能乎",
+      "aiMaskParams": {
+        "mode": "png",
+        "regionIds": [
+          "region_0",
+          "region_1",
+          "region_2",
+          "region_3",
+          "region_4"
+        ],
+        "boundsPixel": {
+          "x": 2,
+          "y": 319,
+          "w": 1020,
+          "h": 467
+        },
+        "aiWidth": 1024,
+        "aiHeight": 469,
+        "fullWidth": 1024,
+        "fullHeight": 1024
+      },
+      "imgDataUrl": "images/layer_1.png"
+    }
+  ],
+  "uvImageDataUrl": null,
+  "designType": "other",
+  "maskCanvasWidth": 1024,
+  "maskCanvasHeight": 1024,
+  "aiPrompt": "",
+  "colorOnlyMode": false,
+  "useCustomColor": false,
+  "customColor": "#1890ff",
+  "knifeMode": false,
+  "maskUploadKind": "png",
+  "svgOriginalContent": null,
+  "maskSourceImageDataUrl": "images/mask_source.png",
+  "globalMetalness": 0,
+  "globalRoughness": 0.5,
+  "globalNoiseScale": 1000,
+  "globalNoiseStrength": 0,
+  "globalFillColor": "#ffffff",
+  "globalFillEnabled": false,
+  "savedAt": 1772420155906
+}

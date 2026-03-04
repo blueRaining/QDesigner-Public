@@ -1,0 +1,60 @@
+.save-button-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.save-design-btn {
+    background: linear-gradient(135deg, #ff7a18 0%, #ffc400 100%) !important;
+    border: none !important;
+    font-weight: 500;
+    padding: 4px 16px;
+    height: 34px;
+    border-radius: 17px;
+    box-shadow: 0 2px 8px rgba(255, 122, 24, 0.35);
+    transition: all 0.3s ease;
+
+    &:hover:not(:disabled) {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(255, 122, 24, 0.5);
+        background: linear-gradient(135deg, #ff9a3c 0%, #ffd240 100%) !important;
+    }
+
+    &:active:not(:disabled) {
+        transform: translateY(0);
+    }
+
+    &:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+    }
+
+    .anticon {
+        font-size: 16px;
+    }
+}
+
+.save-thumbnail-btn {
+    font-weight: 500;
+    padding: 4px 16px;
+    height: 34px;
+    border-radius: 17px;
+    transition: all 0.3s ease;
+
+    &:hover:not(:disabled) {
+        transform: translateY(-1px);
+    }
+
+    &:active:not(:disabled) {
+        transform: translateY(0);
+    }
+
+    &:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+    }
+
+    .anticon {
+        font-size: 16px;
+    }
+}

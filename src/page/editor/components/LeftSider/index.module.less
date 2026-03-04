@@ -1,0 +1,112 @@
+.treeWrapper{
+    position: relative;
+    overflow: visible; // 允许收起/展开按钮溢出显示（否则会被裁剪）
+    height:100%;
+    width: 100%;
+    background-color: var(--editor-panel-bg, #121212) !important;
+}
+
+.treeScroll{
+    height: 100%;
+    overflow: auto;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    padding-right: 10px; // 给拖拽条预留空间，避免遮挡内容
+}
+ 
+/* 滚动条整体部分 */
+.treeScroll::-webkit-scrollbar {
+    width:10px !important;
+    height:10px !important;
+}
+
+/* 滚动条里面的滑块 */
+.treeScroll::-webkit-scrollbar-thumb {
+    background-color: rgb(144 147 153 / 30%);
+    border-radius: 10px;
+    width: 10px !important;
+    transition: background-color 0.3s;
+}
+.treeMenu{
+    background-color: var(--editor-panel-bg, #121212) !important;
+    width: 100% !important;
+}
+
+.splitter{
+    position: absolute;
+    // 稍微“压”到右侧边界上，保证紧贴右侧组件且更容易命中拖拽
+    right: -4px;
+    top: 0;
+    bottom: 0;
+    width: 14px; // 加大命中区域，拖拽更容易
+    cursor: col-resize;
+    user-select: none;
+    touch-action: none;
+    z-index: 10;
+    background: transparent;
+}
+
+.splitter::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    // 透明热区（视觉上仍然是细线）
+    background: transparent;
+}
+
+.splitter::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    transform: translateX(-50%);
+    background: var(--editor-accent-weak2, rgba(255, 255, 255, 0.16));
+}
+
+.splitter:hover{
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.collapseBtn{
+    position: absolute;
+    top: 50%;
+    right: -16px;
+    transform: translateY(-50%);
+    width: 32px;   // 加大命中区域
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    z-index: 20;
+
+    background: var(--editor-panel-bg, #121212);
+    border: 1px solid var(--editor-border, rgba(255,255,255,0.12));
+    border-left: none;
+    border-radius: 0 12px 12px 0;
+    color: rgba(255,255,255,0.85);
+    font-size: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+.collapseBtn::before{
+    content: "";
+    position: absolute;
+    left: -6px;
+    right: -6px;
+    top: -6px;
+    bottom: -6px;
+    // 透明热区，进一步提升可点中性
+    background: transparent;
+}
+
+.collapseBtn:hover{
+    color: var(--editor-accent, #ff8a00);
+    border-color: rgba(255,138,0,0.35);
+}

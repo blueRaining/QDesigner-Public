@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "id": "tpl_4056cd42ae52",
+  "name": "Orange_juice",
+  "description": null,
+  "category": "bottle",
+  "category_name": "瓶型标签设计",
+  "model": "model.rain",
+  "thumbnail": "thumbnail.jpg",
+  "aiconfig": "aiconfig.json",
+  "environment": "environment.env"
+}

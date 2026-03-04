@@ -1,0 +1,206 @@
+// 深色科技潮流风格 - 资源广场
+@primary-color: #667eea;
+@secondary-color: #764ba2;
+@accent-color: #a78bfa;
+@accent-gradient: linear-gradient(135deg, @primary-color 0%, @secondary-color 100%);
+@text-color: #fff;
+@text-secondary: rgba(255, 255, 255, 0.6);
+@text-light: rgba(255, 255, 255, 0.4);
+@border-color: rgba(255, 255, 255, 0.08);
+@card-bg: rgba(255, 255, 255, 0.03);
+@glass-bg: rgba(255, 255, 255, 0.05);
+
+.page {
+  position: relative;
+  overflow-x: hidden;
+}
+
+// Hero 区域
+.header {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 60px 40px 80px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-size: 56px;
+  font-weight: 900;
+  color: @text-color;
+  margin: 0 0 20px 0;
+  letter-spacing: -2px;
+  line-height: 1.1;
+  background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.7) 50%, @accent-color 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 20px;
+  color: @text-secondary;
+  margin: 0 0 40px 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+// 筛选栏
+.filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1280px;
+  margin: 0 auto 40px;
+  padding: 0 40px;
+  position: relative;
+  z-index: 1;
+
+  :global(.ant-tabs) {
+    flex: 1;
+  }
+
+  :global(.ant-tabs-nav) {
+    margin-bottom: 0;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  :global(.ant-tabs-tab) {
+    color: @text-secondary;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 16px 24px;
+    margin: 0;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: @accent-color;
+    }
+  }
+
+  :global(.ant-tabs-tab-active .ant-tabs-tab-btn) {
+    color: @accent-color !important;
+  }
+
+  :global(.ant-tabs-ink-bar) {
+    height: 3px;
+    border-radius: 3px;
+    background: @accent-gradient;
+  }
+}
+
+.sortWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: @glass-bg;
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid @border-color;
+
+  :global(.ant-select) {
+    .ant-select-selector {
+      background: transparent !important;
+      border: 1px solid @border-color !important;
+      color: @text-color !important;
+
+      &:hover {
+        border-color: rgba(102, 126, 234, 0.4) !important;
+      }
+    }
+
+    .ant-select-arrow {
+      color: @text-secondary;
+    }
+  }
+}
+
+.sortLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: @text-secondary;
+}
+
+// 内容区域
+.content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px 80px;
+  min-height: 500px;
+  position: relative;
+  z-index: 1;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  gap: 20px;
+
+  :global(.ant-spin-text) {
+    color: @text-secondary;
+  }
+}
+
+// 卡片网格
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+// 响应式
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .title {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: 40px 20px 60px;
+  }
+
+  .content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .filters {
+    flex-direction: column;
+    padding: 0 20px;
+    gap: 16px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+}

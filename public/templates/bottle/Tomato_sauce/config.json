@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "id": "tpl_c895a53218a9",
+  "name": "Tomato_sauce",
+  "description": null,
+  "category": "bottle",
+  "category_name": "瓶型标签设计",
+  "model": "model.rain",
+  "thumbnail": "thumbnail.jpg",
+  "aiconfig": "aiconfig.json",
+  "environment": "environment.env"
+}

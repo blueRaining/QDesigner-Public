@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "id": "tpl_775434a99aa1",
+  "name": "porcelain3",
+  "description": null,
+  "category": "ceramic",
+  "category_name": "瓷器表面设计",
+  "model": "model.rain",
+  "thumbnail": "thumbnail.jpg",
+  "aiconfig": "aiconfig.json",
+  "environment": "environment.env"
+}

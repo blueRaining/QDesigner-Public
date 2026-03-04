@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "id": null,
+  "name": null,
+  "description": null,
+  "category": null,
+  "category_name": null,
+  "model": "model.rain",
+  "thumbnail": "thumbnail.jpg",
+  "aiconfig": "aiconfig.json",
+  "environment": "environment.env"
+}

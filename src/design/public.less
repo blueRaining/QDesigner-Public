@@ -1,0 +1,441 @@
+@import url('/@/design/theme/dark.less');
+
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: @text-color-active !important;
+}
+.ant-tabs-tab-btn{
+    color: @text-color-no-active !important;
+}
+.ant-tabs-ink-bar{
+    background: @tabs-ink-bar !important;
+}
+ 
+.ant-menu-vertical-right .ant-menu-item::after,
+.ant-menu-inline .ant-menu-item::after {
+    border: none;
+}
+
+.ant-menu-vertical .ant-menu-item::after,
+.ant-menu-vertical-left .ant-menu-item::after,
+.ant-menu-vertical-right .ant-menu-item::after,
+.ant-menu-inline .ant-menu-item::after {
+    border-right: none !important;
+}
+/*********************select start********************************/
+.ant-select-selection-item{
+    color: #000000 !important;
+}
+.ant-select 
+.ant-select-arrow 
+.anticon{
+    color: #000000 !important;
+}
+.ant-input,
+.ant-picker,
+.ant-select,
+.ant-cascader,
+.ant-input-password,
+.ant-input-affix-wrapper,
+.ant-table-row-expand-icon,
+.ant-select-selector {
+    color: #000000 !important;
+    background-color:#bfbfbf !important;
+    border-radius: 6px !important;
+    border: 0px !important;
+    .anticon {
+        color: @text-color !important;
+    }
+}
+// .ant-select-item-option-selected{
+//     color: #00000000 !important;
+//     background-color:  #00000000;
+// }
+.ant-select-dropdown,
+.ant-picker-dropdown {
+    background-color:rgba(191, 191, 191, 1) !important;
+    .ant-select-item-option,
+    .ant-cascader-menu-item {
+        color: #000000 !important;
+    }
+
+    .ant-select-item-option-active,
+    .ant-select-item-option-selected,
+    .ant-cascader-menu-item-active {
+        color:#ffffff !important;
+        background-color: @menu-bg-selected;
+    }
+
+    .ant-cascader-menu,
+    .ant-picker-time-panel-column,
+    .ant-picker-footer,
+    .ant-picker-panel {
+        border-color: @border-color-base;
+    }
+ 
+    .ant-picker-panel-container {
+       
+        background-color: @card-bg;
+
+        .ant-picker-time-panel-cell-inner,
+        .ant-picker-cell,
+        th,
+        .ant-picker-header,
+        button {
+            color: @text-color-secondary;
+        }
+    }
+ 
+}
+/*****************select end*****************************************/
+.ant-btn {
+    border-radius: 6px !important;
+}
+
+.ant-picker-input > input:focus,
+.theme-default .ant-picker-input > input-focused {
+    box-shadow: none !important;
+}
+
+.ant-input-password,
+.ant-input-affix-wrapper {
+    input {
+        border: none !important;
+    }
+}
+/*******************checkbox start***************************************/
+.ant-checkbox-inner{
+    width: 20px !important;
+    height: 20px !important;
+}
+ 
+ 
+.ant-checkbox-inner,
+.ant-radio-inner {
+    color: @text-color;
+    background-color: #0e0e0e !important;
+} 
+.ant-collapse{
+    border: none !important;
+}
+.ant-collapse-content{
+    background: @card-bg !important;
+}
+.ant-checkbox-inner,
+.ant-table-row-expand-icon {
+    border-radius: 2px !important;
+}
+.ant-checkbox-wrapper:not(.ant-checkbox-wrapper-disabled):hover 
+.ant-checkbox-inner, 
+.ant-checkbox:not(.ant-checkbox-disabled):hover .ant-checkbox-inner{
+    border: 0px !important;
+    border-color:rgba(255, 255, 255, 0) !important;
+}
+.ant-checkbox-checked .ant-checkbox-inner{
+    border: 0px !important;
+    border-color:rgba(255, 255, 255, 0) !important;
+}
+/*********************checkbox end*************************************************/
+// Ant Design 4.x
+.ant-message-notice-content {
+    color: @text-color;
+    background-color: @card-bg;
+}
+
+// Ant Design 5.x - message 组件新类名
+.ant-message {
+    z-index: 100000 !important;
+    .ant-message-notice {
+        .ant-message-notice-content {
+            color: @text-color;
+            background-color: @card-bg;
+            box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.3);
+        }
+    }
+}
+
+// Ant Design 5.x CSS-in-JS 覆盖 (使用 :where 选择器)
+:where(.css-dev-only-do-not-override-*).ant-message .ant-message-notice-content,
+[class*="ant-message"] [class*="ant-message-notice-content"] {
+    color: @text-color !important;
+    background-color: @card-bg !important;
+}
+
+.ant-popover-inner {
+    background-color: @card-bg;
+
+    .ant-popover-message {
+        color: @text-color-secondary;
+    }
+}
+
+.ant-divider {
+    border-color: @border-color-base;
+}
+
+.ant-dropdown-arrow::before {
+    background-color: @card-bg;
+}
+
+.ant-dropdown-menu {
+    background-color: @card-bg !important;
+
+    .ant-dropdown-menu-item {
+        color: @text-color;
+    }
+ 
+}
+
+.ant-modal-content {
+    background-color: @card-bg;
+
+    .ant-modal-body {
+        .ant-modal-confirm-title {
+            color: @heading-color;
+        }
+
+        .ant-modal-confirm-content {
+            color: @text-color;
+        }
+    }
+}
+
+// 深色确认弹窗（用于上传限制、文件过大等提示）
+.dark-confirm-modal {
+    .ant-modal-content {
+        background-color: #1e1e1e !important;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+
+        .ant-modal-body {
+            background: #1e1e1e !important;
+        }
+
+        .ant-modal-confirm-title {
+            color: #fff !important;
+        }
+
+        .ant-modal-confirm-content {
+            color: #aaa !important;
+        }
+
+        .ant-modal-confirm-btns {
+            .ant-btn {
+                border-color: #444;
+                color: #ccc;
+                background: #333;
+
+                &:hover {
+                    border-color: #666;
+                    color: #fff;
+                    background: #444;
+                }
+            }
+
+            .ant-btn-primary {
+                border-color: #f5a623;
+                color: #fff;
+                background: #f5a623;
+
+                &:hover {
+                    background: #f7b84e;
+                    border-color: #f7b84e;
+                }
+            }
+
+            .ant-btn-dangerous {
+                border-color: #ff4d4f;
+                color: #fff;
+                background: #ff4d4f;
+
+                &:hover {
+                    background: #ff7875;
+                    border-color: #ff7875;
+                }
+            }
+        }
+    }
+}
+ 
+
+
+.ant-menu {
+    padding: 10px 20px 0 !important;
+    background: transparent !important;
+}
+
+.ant-menu-sub {
+    padding: 0 !important;
+    background: transparent !important;
+}
+
+.ant-menu-submenu-popup {
+    padding: 0 !important;
+    background: transparent !important;
+
+    .ant-menu-sub {
+        background-color: @card-bg !important;
+    }
+}
+
+.anticon {
+    svg {
+        vertical-align: initial !important;
+    }
+}
+
+.ant-picker {
+    width: 100% !important;
+}
+
+.ant-pagination {
+    a,
+    .ant-pagination-prev,
+    .ant-pagination-next,
+    .anticon {
+        color: @text-color-secondary;
+    }
+
+    .ant-pagination-item-active > a {
+      
+        background-color: @card-bg;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: @text-color;
+}
+
+label {
+    color: @text-color !important;
+}
+html{
+    height: 100%;
+}
+body {
+    background: @bg;
+    height: 100%;
+}
+#app{
+    height: 100%;
+    overflow: hidden;
+}
+ .headerMenu{
+    .ant-menu-item {
+        font-size: 14px;
+        font-weight: @weight-normal;
+        color: @menu-text !important;
+        border-radius: 8px;
+    }
+    .ant-menu-item-selected {
+        padding: 0 16px;
+        font-weight: @weight500;
+        color: @selected-bg !important;
+        background: rgb(18, 18, 18) !important;
+        border-radius: 8px;
+    }
+    .ant-menu-item:hover {
+        color: @selected-bg !important;
+    }
+
+ }
+
+
+.ant-descriptions-bordered .ant-descriptions-item-label,
+.ant-descriptions-item-content {
+    color: @text-color;
+    background-color: @card-bg;
+}
+
+.ant-descriptions-title {
+    color: @text-color;
+}
+
+.ant-layout-content {
+    background: @bg !important;
+    min-height: 100% !important;
+}
+
+.ant-layout-sider {
+    color: rgba(255, 255, 255, 1);
+    background: @card-bg !important;
+}
+
+.ant-btn-link {
+    border: none !important;
+}
+
+.ant-layout-sider-collapsed {
+    .ant-menu:not(.ant-menu-horizontal) {
+        .ant-menu-item-selected {
+            padding: 0 11.5px;
+        }
+    }
+
+    .ant-menu-item:hover {
+        padding: 0 11.5px;
+    }
+ 
+}
+
+.ant-menu-inline,
+.ant-menu-vertical,
+.ant-menu-vertical-left {
+    border-right: 1px solid @border-color-base;
+}
+
+div,
+main,
+ul {
+    /* 滚动条整体部分 */
+    &::-webkit-scrollbar {
+        width: 3px;
+    }
+
+    /* 滚动条里面的滑块 */
+    &::-webkit-scrollbar-thumb {
+        background-color: rgb(144 147 153 / 30%);
+        border-radius: 20px;
+        transition: background-color 0.3s;
+    }
+}
+/***************slider*******************/
+ .ant-slider 
+ .ant-slider-handle::after{
+    background-color:#bfbfbf !important;
+}
+// html{
+//     user-select: none;
+// }
+// body {
+//     user-select: none;
+// }
+// div {
+//     user-select: none;
+// }
+span {
+    user-select: none;
+}
+input{
+    user-select: none;
+}
+img {
+    user-select: text; /* 允许对图片进行拖拽操作 */
+}
+ 
+// .ant-tooltip{
+//   display: none !important;
+// }
+.ant-upload-list-item {
+    border: 0px !important;
+}
+ 
+.ant-tree.ant-tree-block-node 
+.ant-tree-list-holder-inner 
+.ant-tree-node-content-wrapper{
+    flex-shrink:0
+}

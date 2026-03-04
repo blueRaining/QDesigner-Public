@@ -1,0 +1,97 @@
+.lightingWrapper {
+    padding: 16px;
+    color: rgba(255, 255, 255, 0.85);
+
+    :global {
+        .ant-tabs-nav {
+            margin-bottom: 16px;
+        }
+
+        .ant-tabs-tab {
+            color: rgba(255, 255, 255, 0.65);
+
+            &.ant-tabs-tab-active {
+                color: #ff8a00;
+
+                .ant-tabs-tab-btn {
+                    color: #ff8a00;
+                }
+            }
+        }
+
+        .ant-tabs-ink-bar {
+            background: #ff8a00;
+        }
+
+        .ant-slider-track {
+            background: #ff8a00;
+        }
+
+        .ant-slider-handle {
+            border-color: #ff8a00;
+
+            &:hover,
+            &:focus {
+                border-color: #ff8a00;
+                box-shadow: 0 0 0 5px rgba(255, 138, 0, 0.12);
+            }
+        }
+    }
+}
+
+.basicPanel,
+.advancedPanel {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.controlGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.controlLabel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.85);
+
+    span:first-child {
+        font-weight: 500;
+    }
+
+    span:last-child {
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 12px;
+    }
+}
+
+.colorRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+}
+
+.angleCanvas,
+.heightCanvas {
+    max-width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.4);
+    }
+
+    &:active {
+        cursor: grabbing;
+    }
+}

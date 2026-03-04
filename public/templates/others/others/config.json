@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "id": "cdn_others_others",
+  "name": "其他模型",
+  "description": null,
+  "category": "others",
+  "category_name": null,
+  "model": "model.rain",
+  "thumbnail": "thumbnail.jpg",
+  "aiconfig": "aiconfig.json",
+  "environment": "environment.env"
+}
