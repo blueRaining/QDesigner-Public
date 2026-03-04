@@ -138,6 +138,15 @@ src/
 └── utils/                 # 工具函数
 ```
 
+## 联系作者
+
+如有问题、建议或商务合作，欢迎通过以下方式联系：
+
+- **B 站：** [QDesign设计工具](https://space.bilibili.com/267093860)
+- **微信：** 扫码添加
+
+<img src="./public/icons/wechat-qr.jpg" alt="微信二维码" width="200" />
+
 ## 声明
 
 本项目以 [MIT License](./LICENSE) 开源发布，仅供学习、研究和合法的商业用途。使用者应遵守以下条款：
