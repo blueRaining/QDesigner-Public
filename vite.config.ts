@@ -6,7 +6,7 @@ import react from '@vitejs/plugin-react'
 import { wrapperEnv } from './build/utils'
 import { vitePlugins } from './build/vite/plugin'
 import svgr from 'vite-plugin-svgr'
-import vitePluginBundleObfuscator from 'vite-plugin-bundle-obfuscator'
+
 
 // https://vitejs.dev/config/
 export default ({ command, mode }: ConfigEnv): UserConfig => {
@@ -92,29 +92,6 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
                         .replace(/href="\.\/icons\//g, `href="${VITE_PUBLIC_PATH}icons/`)
                 }
             }] : []),
-            ...(isBuild ? [vitePluginBundleObfuscator({
-                enable: true,
-                log: false,
-                autoExcludeNodeModules: false,
-                excludes: ['vendor-react', 'vendor-antd', 'vendor-babylon', 'preload-helper'],
-                threadPool: {
-                    enable: true,
-                    size: 4,
-                },
-                options: {
-                    compact: true,
-                    controlFlowFlattening: false,
-                    deadCodeInjection: false,
-                    stringArray: true,
-                    stringArrayThreshold: 0.5,
-                    stringArrayEncoding: ['base64'],
-                    splitStrings: false,
-                    identifierNamesGenerator: 'hexadecimal',
-                    renameGlobals: false,
-                    selfDefending: false,
-                    unicodeEscapeSequence: false,
-                },
-            })] : []),
         ],
 
         resolve: {
