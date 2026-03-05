@@ -4,6 +4,10 @@
 
 > 产品设计 · 3D 展示 · 在线协作
 
+![编辑器界面](./public/icons/5c4f8352-24ac-40c0-a607-1770e90e9ff8.png)
+
+![模板中心](./public/icons/739550bf-a328-49f9-8b7e-8bf1319c0305.png)
+
 **Pro 版在线体验：** [http://babylonjsx.cn/home.html#/home](http://babylonjsx.cn/home.html#/home)
 
 ## 开源版 vs Pro 版
